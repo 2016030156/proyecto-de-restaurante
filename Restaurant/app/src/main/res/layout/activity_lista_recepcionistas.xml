@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#CDDC39"
+    tools:context=".Gerentes.ListaRecepcionistasActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:gravity="center"
+        android:text="Lista de Recepcionistas"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnNuevoRecepcionista"
+        android:layout_width="239dp"
+        android:layout_height="68dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#00BCD4"
+        android:text="Nuevo Recepcionista"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="12dp"/>
+
+    <ListView
+        android:id="@+id/lstRecepcionistas"
+        android:layout_width="369dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

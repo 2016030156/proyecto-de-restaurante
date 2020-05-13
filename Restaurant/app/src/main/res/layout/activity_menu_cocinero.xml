@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cocineros.MenuCocineroActivity">
+    <LinearLayout
+        android:id="@+id/contenedorCocinero"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#CDDC39"
+        android:padding="10dp">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="39dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Menu Cocinero"
+            android:textSize="30sp"
+            android:textColor="#000000"
+            android:textStyle="bold"  />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="41dp" />
+
+        <Button
+            android:id="@+id/btnComandasCocinero"
+            android:layout_width="239dp"
+            android:layout_height="68dp"
+            android:text="Comandas"
+            android:backgroundTint="#00BCD4"
+            android:layout_gravity="center"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="27dp" />
+
+        <Button
+            android:id="@+id/btnSalirCocinero"
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#00BCD4"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Salir" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

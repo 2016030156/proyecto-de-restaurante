@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/lblIdHistorialCaja"
+        android:text="Aquí va el id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"/>
+    <TextView
+        android:id="@+id/lblMesaHistorialCaja"
+        android:text="Aquí va el mesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/lblTotalHistorialCaja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aquí va el total"
+        android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/lblObservacionesHistorialCaja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aquí va la Observaciones"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/lblMeseroHistorialCaja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aquí va el mesero"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/lblFechaHoraHistorialCaja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aquí va el Fecha/Hora"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/lblEstadoHistorialCaja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aquí va el Estado"
+            android:textSize="20dp" />
+
+</LinearLayout>

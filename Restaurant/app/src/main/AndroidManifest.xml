@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.restaurant">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Gerentes.NuevaReservacionActivity"></activity>
+        <activity android:name=".Gerentes.NuevoPlatilloActivity" />
+        <activity android:name=".Gerentes.NuevaMesaActivity" />
+        <activity android:name=".Gerentes.NuevaComandaActivity" />
+        <activity android:name=".Gerentes.NuevoUsuarioActivity" />
+        <activity android:name=".Recepcionistas.MenuRecepcionistaActivity" />
+        <activity android:name=".Meseros.MenuMeseroActivity" />
+        <activity android:name=".Cocineros.MenuCocineroActivity" />
+        <activity android:name=".Clientes.MenuClienteActivity" />
+        <activity android:name=".Cajeros.MenuCajeroActivity" />
+        <activity android:name=".Gerentes.ListaReservacionesActivity" />
+        <activity android:name=".Gerentes.ReportesRangosActivity" />
+        <activity android:name=".Gerentes.ReportesDiariosActivity" />
+        <activity android:name=".Gerentes.HistorialCajaActivity" />
+        <activity android:name=".Gerentes.HistorialPlatillosActivity" />
+        <activity android:name=".Gerentes.ListaMesasActivity" />
+        <activity android:name=".Gerentes.ListaPlatillosActivity" />
+        <activity android:name=".Gerentes.ListaClientesActivity" />
+        <activity android:name=".Gerentes.ListaRecepcionistasActivity" />
+        <activity android:name=".Gerentes.ListaCajerosActivity" />
+        <activity android:name=".Gerentes.ListaCocinerosActivity" />
+        <activity android:name=".Gerentes.ListaGerentesActivity" />
+        <activity android:name=".Gerentes.ListaMeserosActivity" />
+        <activity android:name=".Gerentes.ListaComandasActivity" />
+        <activity android:name=".Gerentes.MenuGerentesActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".Gerentes.MenuGerentesActivity"
+    android:orientation="vertical"
+    android:background="#CDDC39"
+    android:padding="30dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Menu Gerente"
+            android:textSize="30sp"
+            android:textColor="#000000"
+            android:textStyle="bold"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="5dp"
+            tools:layout_editor_absoluteY="5dp">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+                        <Button
+                            android:id="@+id/btnMeserosGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Meseros"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnGerentesGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Gerentes"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnCocinerosGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cocineros"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnCajerosGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cajeros"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnRecepcionistasGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Recepcionistas"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnClientesGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Clientes"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnPlatillosGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Platillos"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnMesasGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mesas"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnHistorialPlatillosGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Historial de Platillos"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnHistorialCajaGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Historial de Caja"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnComandasGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Comandas"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnReporteDiarioGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Reporte Diario"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnReporteRangoGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Reporte Rango de Fechas"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+                        <Button
+                            android:id="@+id/btnReservacionesGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Reservaciones"
+                            android:backgroundTint="#00BCD4"
+                            android:layout_gravity="center"/>
+
+                        <Button
+                            android:id="@+id/btnSalirGerente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Salir"
+                            android:backgroundTint="#00BCD4" />
+                </LinearLayout>
+        </ScrollView>
+</LinearLayout>
