@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
     private EditText txtContra;
     private Button btnIniciarSesion;
     private Button btnSalir;
-    private String serverip = "http://examen.searvices.com/ws/";
+    private String serverip = "http://192.168.0.16/WebServices/";
     private SharedPreferences sharedPreferences;
     private RequestQueue requestQueue;
     private JsonObjectRequest jsonObjectRequest;
@@ -89,7 +89,9 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
     public void onResponse(JSONObject response) {
         try{
             JSONArray jsonArray = response.getJSONArray("usuario");
+            System.out.println(jsonArray.toString());
             JSONObject jsonObject = jsonArray.getJSONObject(0);
+            System.out.println(jsonObject.toString());
             if(jsonObject.optInt("id")!=0) {
                 usuario.setId(jsonObject.optString("id"));
                 usuario.setNombre(jsonObject.optString("nombre"));

@@ -82,13 +82,13 @@
                             android:text="Platillos"
                             android:backgroundTint="#00BCD4"
                             android:layout_gravity="center"/>
-                        <Button
+                        <!-- <Button
                             android:id="@+id/btnMesasGerente"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Mesas"
                             android:backgroundTint="#00BCD4"
-                            android:layout_gravity="center"/>
+                            android:layout_gravity="center"/>-->
                         <Button
                             android:id="@+id/btnHistorialPlatillosGerente"
                             android:layout_width="match_parent"

@@ -39,7 +39,7 @@ public class ListaComandasActivity extends AppCompatActivity implements Response
     private JsonObjectRequest jsonObjectRequest;
     private MyArrayAdapter adapter;
     private RequestQueue request;
-    private String serverip = "http://examen.searvices.com/ws/";
+    private String serverip = "http://192.168.0.16/WebServices/";
     String perfil;
     String idUsuario;
     int tipo;

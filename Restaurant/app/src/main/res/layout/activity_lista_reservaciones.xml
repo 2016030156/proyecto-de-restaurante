@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#CDDC39"
+    android:gravity="center"
     tools:context=".Gerentes.ListaReservacionesActivity">
 
     <Space
@@ -27,28 +28,38 @@
         android:layout_height="68dp"
         android:layout_gravity="center"
         android:backgroundTint="#00BCD4"
-        android:text="Registrar reservacion"
-
+        android:text="Nueva reservacion"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold" />
 
-
-
-    <EditText
-        android:id="@+id/txtFechaReservaciones"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:gravity="center"
-        android:hint="@string/report_planned_date"
-        android:inputType="date"
-        android:focusable="false"
-        android:clickable="true"
-        android:maxLines="1"/>
-
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/txtFechaReservaciones"
+        android:layout_width="316dp"
+        android:layout_height="63dp"
+        android:focusable="false"
+        android:gravity="center"
+        android:hint="Seleccionar la fecha"
+        android:inputType="date"
+        android:maxLines="1" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00BCD4"
+        android:text="Buscar Reservaciones"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/lstReservaciones"

@@ -25,11 +25,13 @@
         android:layout_width="match_parent"
         android:layout_height="20dp" />
 
+
     <EditText
         android:id="@+id/txtFechaReporteDiario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="date"
+        android:focusable="false"
         android:hint="Escribe la fecha (Formato: aaaa-MM-dd)"
         android:gravity="center"/>
 

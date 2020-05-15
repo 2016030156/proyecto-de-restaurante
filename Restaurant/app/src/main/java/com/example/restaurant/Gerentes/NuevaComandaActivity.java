@@ -36,7 +36,7 @@ public class NuevaComandaActivity extends AppCompatActivity implements Response.
 
     private JsonObjectRequest jsonObjectRequest;
     private RequestQueue request;
-    private String serverip = "http://examen.searvices.com/ws/";
+    private String serverip = "http://192.168.0.16/WebServices/";
     private Comandas comanda;
     private String idUsuario;
     private TextView lblTitulo;

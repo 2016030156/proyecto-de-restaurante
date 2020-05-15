@@ -23,6 +23,8 @@ import com.android.volley.toolbox.Volley;
 import com.example.restaurant.Modelos.Reportes;
 import com.example.restaurant.R;
 
+import java.util.Calendar;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,8 +38,9 @@ public class ReportesDiariosActivity extends AppCompatActivity  implements Respo
     private JsonObjectRequest jsonObjectRequest;
     private MyArrayAdapter adapter;
     private RequestQueue request;
-    private String serverip = "http://examen.searvices.com/ws/";
+    private String serverip = "http://192.168.0.16/WebServices/";
     EditText txtFecha;
+    Calendar myCalendar = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,8 @@ public class ReportesDiariosActivity extends AppCompatActivity  implements Respo
             }
         });
     }
+
+
 
     public void consultarReporteDiario(String fecha) {
         String url = serverip + "wsJSONCargarHistorialCaja.php?fecha="+fecha;

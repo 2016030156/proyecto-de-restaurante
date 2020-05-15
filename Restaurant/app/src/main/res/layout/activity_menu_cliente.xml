@@ -35,10 +35,10 @@
         <Button
             android:id="@+id/btnReservacionesCliente"
             android:layout_width="239dp"
-            android:layout_height="68dp"
+            android:layout_height="91dp"
             android:layout_gravity="center"
             android:backgroundTint="#00BCD4"
-            android:text="Reservacion"
+            android:text="Nueva reservacion"
             android:textSize="24sp"
             android:textStyle="bold" />
 

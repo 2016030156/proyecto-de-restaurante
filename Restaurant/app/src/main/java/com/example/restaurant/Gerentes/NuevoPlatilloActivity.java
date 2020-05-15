@@ -26,7 +26,7 @@ public class NuevoPlatilloActivity extends AppCompatActivity implements Response
 
     private JsonObjectRequest jsonObjectRequest;
     private RequestQueue request;
-    private String serverip = "http://examen.searvices.com/ws/";
+    private String serverip = "http://192.168.0.16/WebServices/";
     private Platillos platillo;
     private TextView txtTitulo;
     private EditText txtNombre;
@@ -77,7 +77,7 @@ public class NuevoPlatilloActivity extends AppCompatActivity implements Response
     }
 
     public void agregarPlatillo(String nombre,String precio){
-        String url = serverip + "wsJSONAgregarPlatillo.php?nombre="+nombre+"&precio="+precio;
+        String url = serverip + "wsJSONAgregarPlatillos.php?nombre="+nombre+"&precio="+precio;
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         request.add(jsonObjectRequest);
     }

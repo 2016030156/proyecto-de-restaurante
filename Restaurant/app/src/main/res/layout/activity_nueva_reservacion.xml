@@ -34,38 +34,46 @@
 
         <EditText
             android:id="@+id/txtFechaNuevaReservacion"
-            android:layout_width="match_parent"
+            android:layout_width="294dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:focusable="false"
             android:gravity="center"
-            android:hint="Escribe la fecha (Formato: aaaa-MM-dd)"
+            android:hint="Selecciona la fecha"
             android:inputType="date" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="294dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Mesa:"
             android:textColor="#000000"
-            android:textSize="20dp" />
+            android:textSize="24sp" />
+
+       <!-- <Spinner
+            android:id="@+id/spnMesaNuevaReservacion"
+            android:layout_width="285dp"
+            android:layout_height="35dp"
+            android:backgroundTint="#2196F3"></Spinner> -->
 
         <EditText
             android:id="@+id/txtMesaNuevaReservacion"
-            android:layout_width="match_parent"
+            android:layout_width="292dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:inputType="number"/>
+            android:inputType="number" />
+
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Hora:"
             android:textColor="#000000"
-            android:textSize="20dp" />
+            android:textSize="24sp" />
 
         <Spinner
             android:id="@+id/spnHorarioNuevaReservacion"
-            android:layout_width="match_parent"
+            android:layout_width="290dp"
             android:layout_height="35dp"></Spinner>
 
         <LinearLayout

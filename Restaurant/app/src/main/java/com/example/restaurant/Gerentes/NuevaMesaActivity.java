@@ -29,12 +29,14 @@ public class NuevaMesaActivity extends AppCompatActivity implements Response.Lis
 
     private JsonObjectRequest jsonObjectRequest;
     private RequestQueue request;
-    private String serverip = "http://examen.searvices.com/ws/";
+    private String serverip = "http://192.168.0.16/WebServices/";
     private Mesas mesa;
     private TextView txtTitulo;
-    private Spinner spnTipoMesa;
     private Button btnAceptar;
+    private Button btnEliminar;
     private Button btnRegresar;
+
+    private Spinner spnTipoMesa;
     private ArrayList<String> lista;
     private ArrayAdapter<String> adapter;
 
@@ -47,6 +49,7 @@ public class NuevaMesaActivity extends AppCompatActivity implements Response.Lis
         txtTitulo = (TextView) findViewById(R.id.lblTituloNuevaMesa);
         spnTipoMesa = (Spinner) findViewById(R.id.spnTipoNuevaMesa);
         btnAceptar = (Button) findViewById(R.id.btnAceptarNuevaMesa);
+        btnEliminar = (Button) findViewById(R.id.btnEliminarMesa);
         btnRegresar = (Button) findViewById(R.id.btnRegresarNuevaMesa);
         mesa = (Mesas) extras.getSerializable("mesa");
         txtTitulo.setText(extras.getString("tipo"));
@@ -65,6 +68,7 @@ public class NuevaMesaActivity extends AppCompatActivity implements Response.Lis
             else
                 spnTipoMesa.setSelection(1);
         }
+
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,6 +85,25 @@ public class NuevaMesaActivity extends AppCompatActivity implements Response.Lis
                 btnRegresar.callOnClick();
             }
         });
+
+        btnEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String tipo;
+                String status;
+                if(spnTipoMesa.getSelectedItemPosition()==0)
+                    tipo="1";
+                else
+                    tipo="2";
+                if(mesa==null)
+                    agregarMesa("1",tipo);
+                else
+                    editarMesa(mesa.getId(),"1",tipo);
+                btnRegresar.callOnClick();
+            }
+        });
+
+
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,6 +128,14 @@ public class NuevaMesaActivity extends AppCompatActivity implements Response.Lis
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         request.add(jsonObjectRequest);
     }
+
+    public void eliminarMesa(String id,String status,String tipo) {
+        String url = serverip + "wsJSONEliminarMesa.php?status="+status+"&tipo="+tipo+"&id="+id;
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
+        request.add(jsonObjectRequest);
+    }
+
+
 
     @Override
     public void onErrorResponse(VolleyError error) {}

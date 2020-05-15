@@ -45,7 +45,7 @@ public class MenuGerentesActivity extends AppCompatActivity {
         btnCocineros = (Button) findViewById(R.id.btnCocinerosGerente);
         btnComandas = (Button) findViewById(R.id.btnComandasGerente);
         btnGerentes = (Button) findViewById(R.id.btnGerentesGerente);
-        btnMesas = (Button) findViewById(R.id.btnMesasGerente);
+        //btnMesas = (Button) findViewById(R.id.btnMesasGerente);
         btnMeseros = (Button) findViewById(R.id.btnMeserosGerente);
         btnPlatillos = (Button) findViewById(R.id.btnPlatillosGerente);
         btnRecepcionistas = (Button) findViewById(R.id.btnRecepcionistasGerente);
@@ -99,12 +99,12 @@ public class MenuGerentesActivity extends AppCompatActivity {
                 startActivity(new Intent(MenuGerentesActivity.this,ListaGerentesActivity.class));
             }
         });
-        btnMesas.setOnClickListener(new View.OnClickListener() {
+        /*btnMesas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MenuGerentesActivity.this,ListaMesasActivity.class));
             }
-        });
+        });*/
         btnMeseros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

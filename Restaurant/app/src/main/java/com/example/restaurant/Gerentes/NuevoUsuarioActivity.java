@@ -28,7 +28,7 @@ public class NuevoUsuarioActivity extends AppCompatActivity implements Response.
 
     private JsonObjectRequest jsonObjectRequest;
     private RequestQueue request;
-    private String serverip = "http://examen.searvices.com/ws/";
+    private String serverip = "http://192.168.0.16/WebServices/";
     private Usuarios usuario;
     private String txtPerfil;
     private TextView txtTipo;

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#CDDC39"
+    android:gravity="center"
     tools:context=".Gerentes.ReportesRangosActivity">
 
     <Space
@@ -27,11 +28,12 @@
 
     <EditText
         android:id="@+id/txtFecha1ReporteRango"
-        android:layout_width="match_parent"
+        android:layout_width="286dp"
         android:layout_height="wrap_content"
-        android:inputType="date"
-        android:hint="Primera fecha (Formato: aaaa-MM-dd)"
-        android:gravity="center"/>
+        android:focusable="false"
+        android:gravity="center"
+        android:hint="Primera fecha"
+        android:inputType="date" />
 
     <Space
         android:layout_width="match_parent"
@@ -39,15 +41,26 @@
 
     <EditText
         android:id="@+id/txtFecha2ReporteRango"
-        android:layout_width="match_parent"
+        android:layout_width="288dp"
         android:layout_height="wrap_content"
-        android:inputType="date"
-        android:hint="Segunda fecha (Formato: aaaa-MM-dd)"
-        android:gravity="center"/>
+        android:focusable="false"
+        android:gravity="center"
+        android:hint="Segunda fecha "
+        android:inputType="date" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="291dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00BCD4"
+        android:text="Buscar"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/lstReporteRango"

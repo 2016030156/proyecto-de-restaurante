@@ -5,7 +5,7 @@
     tools:context=".Gerentes.HistorialCajaActivity"
     android:orientation="vertical"
     android:layout_width="match_parent"
-
+    android:gravity="center"
     android:background="#CDDC39"
     android:layout_height="match_parent">
 
@@ -21,13 +21,29 @@
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"/>
+
     <EditText
         android:id="@+id/txtFechaCaja"
-        android:layout_width="match_parent"
+        android:layout_width="289dp"
         android:layout_height="wrap_content"
-        android:inputType="date"
-        android:hint="Escribe la fecha (Formato: aaaa-MM-dd)"
-        android:gravity="center"/>
+        android:focusable="false"
+        android:gravity="center"
+        android:hint="Inserte la fecha"
+        android:inputType="date" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="291dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00BCD4"
+        android:text="Buscar"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Space
         android:layout_width="match_parent"

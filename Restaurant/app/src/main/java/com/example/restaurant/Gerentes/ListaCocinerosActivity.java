@@ -40,7 +40,7 @@ public class ListaCocinerosActivity extends AppCompatActivity implements Respons
     private JsonObjectRequest jsonObjectRequest;
     private MyArrayAdapter adapter;
     private RequestQueue request;
-    private String serverip = "http://examen.searvices.com/ws/";
+    private String serverip = "http://192.168.0.16/WebServices/";
     private boolean consulta;
 
     @Override

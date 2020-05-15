@@ -32,7 +32,7 @@ public class MenuMeseroActivity extends AppCompatActivity {
         id = sharedPreferences.getString("id","");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_mesero);
-        btnMesas = (Button) findViewById(R.id.btnMesasMesero);
+        //btnMesas = (Button) findViewById(R.id.btnMesasMesero);
         btnComandas = (Button) findViewById(R.id.btnComandasMesero);
         btnNuevaComanda = (Button) findViewById(R.id.btnNuevaComandaMesero);
         btnSalir = (Button) findViewById(R.id.btnSalirMesero);

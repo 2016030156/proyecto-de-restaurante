@@ -28,7 +28,7 @@
             android:textColor="#000000"
             android:textStyle="bold"/>
 
-        <Space
+        <!-- <Space
             android:layout_width="match_parent"
             android:layout_height="41dp" />
 
@@ -40,7 +40,7 @@
             android:backgroundTint="#00BCD4"
             android:layout_gravity="center"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold" /> -->
 
         <Space
             android:layout_width="match_parent"

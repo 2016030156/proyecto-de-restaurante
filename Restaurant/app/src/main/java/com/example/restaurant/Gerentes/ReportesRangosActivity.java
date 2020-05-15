@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -28,8 +29,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.widget.DatePicker;
+import android.app.DatePickerDialog;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class ReportesRangosActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener {
 
@@ -38,9 +45,11 @@ public class ReportesRangosActivity extends AppCompatActivity implements Respons
     private JsonObjectRequest jsonObjectRequest;
     private MyArrayAdapter adapter;
     private RequestQueue request;
-    private String serverip = "http://examen.searvices.com/ws/";
+    private String serverip = "http://192.168.0.16/WebServices/";
     EditText txtFecha1;
     EditText txtFecha2;
+    private Button btnBuscarfecha;
+    final Calendar calendar = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +57,61 @@ public class ReportesRangosActivity extends AppCompatActivity implements Respons
         setContentView(R.layout.activity_reportes_rangos);
         lstReporteDiario = (ListView) findViewById(R.id.lstReporteRango);
         request = Volley.newRequestQueue(this);
+        btnBuscarfecha = (Button) findViewById(R.id.btnBuscar);
         txtFecha1 = (EditText) findViewById(R.id.txtFecha1ReporteRango);
         txtFecha2 = (EditText) findViewById(R.id.txtFecha2ReporteRango);
-        txtFecha1.addTextChangedListener(new TextWatcher() {
+        final DatePickerDialog.OnDateSetListener date1 = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                String formateoFecha = "yyyy-MM-dd";
+                SimpleDateFormat dateFormat = new SimpleDateFormat(formateoFecha, Locale.US);
+                txtFecha1.setText(dateFormat.format(calendar.getTime()));
+            }
+        };
+        final DatePickerDialog.OnDateSetListener date2 = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                String formateoFecha = "yyyy-MM-dd";
+                SimpleDateFormat dateFormat = new SimpleDateFormat(formateoFecha, Locale.US);
+                txtFecha2.setText(dateFormat.format(calendar.getTime()));
+            }
+        };
+        txtFecha1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*actualizarInput1();*/
+                new DatePickerDialog(ReportesRangosActivity.this, date1, calendar.get(Calendar.YEAR)
+                        ,calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+        txtFecha2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*actualizarInput2();*/
+                new DatePickerDialog(ReportesRangosActivity.this, date2, calendar.get(Calendar.YEAR)
+                        ,calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+        btnBuscarfecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!txtFecha1.getText().toString().equals("") && !txtFecha2.getText().toString().equals("")){
+                    consultarReporteDiario(txtFecha1.getText().toString(),txtFecha2.getText().toString());
+                }
+                else
+                Toast.makeText(ReportesRangosActivity.this,"no a seleccionado fechas",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        /*txtFecha1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
             @Override
@@ -71,11 +132,11 @@ public class ReportesRangosActivity extends AppCompatActivity implements Respons
                 if(!txtFecha1.getText().toString().isEmpty() && !txtFecha2.getText().toString().isEmpty())
                     consultarReporteDiario(txtFecha1.getText().toString(),txtFecha2.getText().toString());
             }
-        });
+        });*/
     }
 
     public void consultarReporteDiario(String fecha1,String fecha2) {
-        String url = serverip + "wsJSONCargarReportesRango.php?fecha1="+fecha1+"&fecha2="+fecha2;
+        String url = serverip + "wsJSONCargarReportesRango.php?fechaInicio="+fecha1+"&fechaFin="+fecha2;
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         request.add(jsonObjectRequest);
     }

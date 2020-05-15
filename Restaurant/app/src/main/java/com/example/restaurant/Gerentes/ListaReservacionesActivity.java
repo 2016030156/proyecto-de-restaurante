@@ -29,7 +29,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.widget.DatePicker;
+import android.app.DatePickerDialog;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class ListaReservacionesActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener {
 
@@ -38,11 +45,14 @@ public class ListaReservacionesActivity extends AppCompatActivity implements Res
     private JsonObjectRequest jsonObjectRequest;
     private MyArrayAdapter adapter;
     private RequestQueue request;
-    private String serverip = "http://examen.searvices.com/ws/";
+    private String serverip = "http://192.168.0.16/WebServices/";
     private EditText txtFecha;
     private Button btnNueva;
     String perfil;
     String usuario;
+
+    private Button btnBuscarfecha;
+    final Calendar calendar = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +64,30 @@ public class ListaReservacionesActivity extends AppCompatActivity implements Res
         perfil= getIntent().getStringExtra("perfil");
         usuario= getIntent().getStringExtra("idUsuario");
 
-        txtFecha.addTextChangedListener(new TextWatcher() {
+        btnBuscarfecha = (Button) findViewById(R.id.btnBuscar);
+
+        final DatePickerDialog.OnDateSetListener date1 = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                String formateoFecha = "yyyy-MM-dd";
+                SimpleDateFormat dateFormat = new SimpleDateFormat(formateoFecha, Locale.US);
+                txtFecha.setText(dateFormat.format(calendar.getTime()));
+            }
+        };
+
+        txtFecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*actualizarInput1();*/
+                new DatePickerDialog(ListaReservacionesActivity.this, date1, calendar.get(Calendar.YEAR)
+                        ,calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+        /*txtFecha.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
             @Override
@@ -63,11 +96,24 @@ public class ListaReservacionesActivity extends AppCompatActivity implements Res
             public void afterTextChanged(Editable editable) {
                 consultarReservaciones(txtFecha.getText().toString());
             }
-        });
+        }); */
 
 
         btnNueva = (Button) findViewById(R.id.btnNuevaReservacion);
-        btnNueva.setOnClickListener(new View.OnClickListener() {
+
+        btnBuscarfecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!txtFecha.getText().toString().equals("")){
+                    consultarReservaciones(txtFecha.getText().toString());
+                }
+                else
+                    Toast.makeText(ListaReservacionesActivity.this,"no a seleccionado fechas",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        /*btnNueva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ListaReservacionesActivity.this,NuevaReservacionActivity.class);
@@ -77,7 +123,7 @@ public class ListaReservacionesActivity extends AppCompatActivity implements Res
                 intent.putExtras(bundle);
                 startActivityForResult(intent,0);
             }
-        });
+        });*/
     }
 
     public void consultarReservaciones(String fecha) {
