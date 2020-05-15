@@ -113,7 +113,7 @@ public class ListaReservacionesActivity extends AppCompatActivity implements Res
             }
         });
 
-        /*btnNueva.setOnClickListener(new View.OnClickListener() {
+        btnNueva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ListaReservacionesActivity.this,NuevaReservacionActivity.class);
@@ -123,7 +123,7 @@ public class ListaReservacionesActivity extends AppCompatActivity implements Res
                 intent.putExtras(bundle);
                 startActivityForResult(intent,0);
             }
-        });*/
+        });
     }
 
     public void consultarReservaciones(String fecha) {

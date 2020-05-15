@@ -171,8 +171,8 @@ public class ListaComandasActivity extends AppCompatActivity implements Response
                 for (int i = 0; i < json.length(); i++) {
                     comandas = new Comandas();
                     jsonObject = json.getJSONObject(i);
-                    if (jsonObject.optInt("status") != tipo && (!perfil.equals("1") || !perfil.equals("2")))
-                        continue;
+                    /*if (jsonObject.optInt("status") != tipo && (!perfil.equals("1") || !perfil.equals("2")))
+                        continue;*/
                     comandas.setId(jsonObject.optString("id"));
                     comandas.setIdMesero(jsonObject.optString("id_mesero"));
                     comandas.setIdMesa(jsonObject.optString("id_mesa"));
